@@ -1,0 +1,30 @@
+id = "zerodice0.agent-picker"
+name = "Agent Picker"
+version = "0.1.0"
+min_herdr_version = "0.9.5"
+description = "Popup agent picker sorted by attention (blocked, done, working, idle) and state-change order."
+platforms = ["linux", "macos"]
+
+[[actions]]
+id = "open"
+title = "Open agent picker"
+contexts = ["workspace", "global"]
+command = [
+  "herdr",
+  "plugin",
+  "pane",
+  "open",
+  "--plugin",
+  "zerodice0.agent-picker",
+  "--entrypoint",
+  "picker",
+  "--focus",
+]
+
+[[panes]]
+id = "picker"
+title = "Agent picker"
+placement = "popup"
+width = "80%"
+height = "70%"
+command = ["python3", "agent_picker.py", "tui"]
