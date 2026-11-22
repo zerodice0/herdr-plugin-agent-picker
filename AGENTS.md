@@ -3,10 +3,11 @@
 ## Working on this repository
 
 - `agent_picker.py` is the single implementation module and the popup entrypoint (`python3 agent_picker.py tui`).
-- `tests/test_agent_picker.py` covers the user-visible ordering, filtering, search, key handling, and row text fitting.
-- `herdr-plugin.toml` declares the `open` action and the `picker` popup pane.
+- `tests/test_agent_picker.py` covers the user-visible ordering, filtering, search, key handling, remembered view, project list, and row text fitting.
+- `herdr-plugin.toml` declares the `open` and `open-project` actions and their `picker` and `picker-project` popup panes.
 - Use Python 3.9+ and the standard library only; do not add third-party dependencies.
 - README is the user-facing contract for keys, ordering, and saved-machine behavior. Update it when behavior changes, and put changes under CHANGELOG's `Unreleased` heading.
+- Update `README.md` and `README.ko.md` together; they describe the same behavior in English and Korean.
 - Call Herdr through `HERDR_BIN_PATH` with argv lists; never run commands through a shell.
 
 ```sh
